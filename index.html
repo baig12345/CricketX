@@ -15,6 +15,8 @@
         body {
             background-color: #f2f2f2;
 				font-family: 'Lumanosimo', cursive;
+				margin: 0;
+      		padding: 0;
         }
 .hero-container {
       position: relative;
@@ -22,8 +24,6 @@
       height: 100vh;
       overflow: hidden;
     }
-
-	    
     video {
       position: absolute;
       top: 0;
@@ -58,68 +58,81 @@
     /* Additional Styles for Subsequent Content */
     .subsequent-content {
       margin-top:100vh;
+      background-color: #f5f5f5;
     }
+        .blog-section {
+    padding: 50px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
 
-        .blog-title {
-            font-size: 32px;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 20px;
-        }
+.blog-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
 
-        .big-blog-card {
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 20px;
-            margin-bottom: 20px;
-            transition: transform 0.3s ease;
-        }
+.big-blog-card,
+.small-blog-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    transition: transform 0.3s ease;
+    flex: 1;
+}
 
-        .big-blog-card img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
+.big-blog-card img,
+.small-blog-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
 
-        .big-blog-card h3 {
-            font-size: 28px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
+.big-blog-card h3 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
 
-        .big-blog-card p {
-            font-size: 18px;
-            color: #555;
-        }
+.big-blog-card p {
+    font-size: 18px;
+    color: #555;
+}
 
-        .small-blog-card {
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            padding: 20px;
-            margin-bottom: 20px;
-            transition: transform 0.3s ease;
-        }
+.small-blog-card h4 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
 
-        .small-blog-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 5px;
-            margin-bottom: 10px;
-        }
+.small-blog-card p {
+    font-size: 16px;
+    color: #555;
+}
 
-        .small-blog-card h4 {
-            font-size: 24px;
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
+.card {
+	min-height:30rem;
+}
 
-        .small-blog-card p {
-            font-size: 16px;
-            color: #555;
-        }
+.small-blog-card:hover,
+.big-blog-card:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 991px) {
+    .blog-section {
+        padding: 20px 0;
+    }
+    .big-blog-card,
+    .small-blog-card {
+        margin-bottom: 20px;
+    }
+}
+
 
         .small-blog-card:hover,
         .big-blog-card:hover {
@@ -280,42 +293,43 @@
     </div>
 
     <!-- Blog Section -->
-    <div class="container blog-section">
-        <div class="row">
-            <div class="col-md-12">
-                <h2 class="blog-title">Blogs</h2>
-                <div class="row mt-4">
-                    <div class="col-md-5">
-                        <div class="card big-blog-card" onclick="window.location.href = 'blog1.html'">
-                            <img src="blog.png" alt="Big Blog 1" class="card-img-top">
-                            <div class="card-body">
-                                <h3 class="card-title">Triumph and Joy!</h3>
-                                <p class="card-text">Explore the exhilarating moments of victory and the camaraderie that fuels our team.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="card small-blog-card d-flex position-fixed"" style="min-width:18rem; min-height:30rem;" onclick="window.location.href = 'blog2.html'">
-                            <img src="blog2.png" alt="Small Blog 1" class="card-img-top">
-                            <div class="card-body">
-                                <h4 class="card-title">The Art of Resilience!</h4>
-                                <p class="card-text">Discover the profound lessons that arise from challenges as we delve into the resilience of a determined batter facing an unexpected dismissal.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-3">
-                        <div class="card small-blog-card d-flex position-fixed"" onclick="window.location.href = 'blog3.html'" style="min-width:18rem; min-height:30rem;">
-                            <img src="blog3.png" alt="Small Blog 2" class="card-img-top">
-                            <div class="card-body">
-                                <h4 class="card-title">Embracing Team Spirit!</h4>
-                                <p class="card-text">Embracing Team Unity Celebrating Victories and Camaraderie in Spirited Practice Matches.</p>
-                            </div>
-                        </div>
-                    </div>
+<div class="container blog-section">
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        <!-- Blog Card 1 -->
+        <div class="col">
+            <div class="card overflow-auto">
+                <img src="ban.png" alt="Big Blog 1" class="card-img-top img-fluid">
+                <div class="card-body">
+                    <h3 class="card-title">Triumph and Joy!</h3>
+                    <p class="card-text">Explore the exhilarating moments of victory and the camaraderie that fuels our team.</p>
                 </div>
             </div>
         </div>
+        <!-- Blog Card 2 -->
+        <div class="col">
+            <div class="card">
+                <img src="blog2.png" alt="Small Blog 1" class="card-img-top img-fluid">
+                <div class="card-body">
+                    <h4 class="card-title">The Art of Resilience!</h4>
+                    <p class="card-text">Discover the profound lessons that arise from challenges as we delve into the resilience of a determined batter facing an unexpected dismissal.</p>
+                </div>
+            </div>
+        </div>
+        <!-- Blog Card 3 -->
+        <div class="col">
+            <div class="card">
+                <img src="blogs.png" alt="Small Blog 2" class="card-img-top img-fluid">
+                <div class="card-body">
+                    <h4 class="card-title">Embracing Team Spirit!</h4>
+                    <p class="card-text">Embracing Team Unity Celebrating Victories and Camaraderie in Spirited Practice Matches.</p>
+                </div>
+            </div>
+        </div>
+        <!-- More Blog Cards ... -->
     </div>
+</div>
+
+
 
     <div class="container mt-4 mb-4">
         <div class="row">
